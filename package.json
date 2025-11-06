@@ -1,16 +1,24 @@
 {
     "name": "cadastro-clientes-js",
     "version": "1.0.0",
-    "description": "Sistema de cadastro de clientes usando Node.js e SQLite",
-    "main": "populaDados.js",
+    "description": "Sistema de cadastro de clientes e vendas usando Node.js, SQLite e Sequelize",
+    "main": "vendasSqlConnect.js",
     "scripts": {
-      "criar-tabela": "node sqliteConnect.js",
-      "inserir-dados": "node populaDados.js"
+        "criar-tabela-clientes": "node sqliteConnect.js",
+        "inserir-dados-clientes": "node populaDados.js",
+        "criar-tabelas-vendas": "node vendasSqlConnect.js"
     },
-    "keywords": ["nodejs", "sqlite", "cadastro", "clientes"],
+    "keywords": [
+        "nodejs",
+        "sqlite",
+        "sequelize",
+        "cadastro",
+        "vendas"
+    ],
     "author": "Jessé",
     "license": "MIT",
     "dependencies": {
-      "sqlite3": "^5.1.6"
+        "sequelize": "^6.37.7",
+        "sqlite3": "^5.1.7"
     }
-  }
+}
