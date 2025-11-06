@@ -1,0 +1,6 @@
+venv/
+
+BD/
+*.db
+
+node_modules/

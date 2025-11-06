@@ -1,0 +1,16 @@
+{
+    "name": "cadastro-clientes-js",
+    "version": "1.0.0",
+    "description": "Sistema de cadastro de clientes usando Node.js e SQLite",
+    "main": "populaDados.js",
+    "scripts": {
+      "criar-tabela": "node sqliteConnect.js",
+      "inserir-dados": "node populaDados.js"
+    },
+    "keywords": ["nodejs", "sqlite", "cadastro", "clientes"],
+    "author": "Jessé",
+    "license": "MIT",
+    "dependencies": {
+      "sqlite3": "^5.1.6"
+    }
+  }
