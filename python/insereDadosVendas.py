@@ -37,3 +37,41 @@ for i in range (len(tbVendedor)):
         ValueError()
 
 print("Dados inseridos na tbVendedor")
+
+
+#--------------------------------------------
+# Abordagem para inserção de dados em massa
+# sem a necessidade de validar campo a campo,
+# sem manipulação de dados pontuais,
+# como no código acima:
+#--------------------------------------------
+
+# tabela Produto
+produto =  pd.read_excel(endereco + "produto1.xlsx")
+
+tbProduto = pd.DataFrame(produto)
+
+conn = engine.connect()  # criando conexão com o BD, e não sessão
+
+metadata = sa.MetaData()
+
+# Pegar o DataFrame Produto e criar um dicionário
+# orientado pelos registros (records)
+# criando um arquivo de dados por dicionario
+# efetuadno todo o cruzamento matricial de linha x coluna
+DadosProduto = tbProduto.to_dict(orient="records") 
+
+
+tabela_produto = sa.Table(vd.produto.__tablename__, metadata, autoload_with=engine)
+
+try:
+    conn.execute(tabela_produto.insert(), DadosProduto)
+    conn.commit() # confirmação de dados
+    print("Dados inseridos na Tabela Produto")
+except Exception as e:
+    ValueError("Erro ao inserir dados: ", e)
+
+
+
+conn.close()
+

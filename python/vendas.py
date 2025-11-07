@@ -54,7 +54,7 @@ class vendedor(base):
     genero = sa.Column(sa.CHAR(1))
 
 #Tabela Vendas
-class produto(base):
+class vendas(base):
     __tablename__ = "vendas" 
 
     idTransacao = sa.Column(sa.INTEGER, primary_key=True, index=True)
