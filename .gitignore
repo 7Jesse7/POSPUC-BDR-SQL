@@ -1,0 +1,11 @@
+venv/
+
+BD/
+*.db
+
+node_modules/
+
+Dados_Exemplo/
+
+__pycache__/
+*.pyc
