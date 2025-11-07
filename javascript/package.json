@@ -18,7 +18,9 @@
     "author": "Jessé",
     "license": "MIT",
     "dependencies": {
+        "csv-parser": "^3.0.0",
         "sequelize": "^6.37.7",
-        "sqlite3": "^5.1.7"
+        "sqlite3": "^5.1.7",
+        "xlsx": "^0.18.5"
     }
 }
